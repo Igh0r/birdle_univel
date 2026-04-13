@@ -12,7 +12,7 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Text('Praise to the Sun, My friend!'),
+          child: Tile('A', HitType.hit),
         ),
       ),
     );
@@ -27,7 +27,25 @@ class Tile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  
-    return Container();
+    return Container(
+      width: 65,
+      height: 65,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey.shade300),
+        color: switch (hitType) {
+          HitType.hit => Colors.green,
+          HitType.partial => Colors.yellow,
+          HitType.miss => Colors.grey,
+          _ => Colors.white,
+        },
+      ),
+      child: Center(
+        child: Text(
+          letter.toUpperCase(),
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+      ),
+    );
   }
 }
+
