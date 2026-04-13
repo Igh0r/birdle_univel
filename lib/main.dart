@@ -53,7 +53,6 @@ class Tile extends StatelessWidget {
 class GamePage extends StatelessWidget {
   GamePage({super.key});
 
-  // This manages game logic, and is out of scope for this lesson.
   final Game _game = Game();
 
   @override
@@ -75,3 +74,4 @@ class GamePage extends StatelessWidget {
     );
   }
 }
+//este modulo ocorreu apenas para testes no devtoll
